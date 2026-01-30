@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered List</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ol {
+            list-style: none;
+            counter-reset: item;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            counter-increment: item;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+            backdrop-filter: blur(10px);
+            animation: slide-in 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            background: rgba(30, 41, 59, 0.8);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        li::before {
+            content: counter(item);
+            margin-right: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            background: #38bdf8;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        li span {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+        }
+
+        /* Staggered animation delays */
+        li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Project Workflow</h1>
+        <ol>
+            <li><span>Conceptualization & Research</span></li>
+            <li><span>Design & Prototyping</span></li>
+            <li><span>Development & Implementation</span></li>
+            <li><span>Testing & Quality Assurance</span></li>
+            <li><span>Deployment & Launch</span></li>
+        </ol>
+    </div>
+</body>
+
+</html>
